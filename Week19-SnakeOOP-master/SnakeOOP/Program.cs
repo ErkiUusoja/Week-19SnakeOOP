@@ -8,11 +8,14 @@ namespace SnakeOOP
     {
         static void Main(string[] args)
         {
+            Console.BackgroundColor = ConsoleColor.Gray;
+            Console.ForegroundColor = ConsoleColor.Magenta;
+            Console.Clear();
             int score = 0;
             //drawing a game field frame
             Walls walls = new Walls(80, 25);
             walls.Draw();
-
+            Console.ForegroundColor = ConsoleColor.Red;
             Point snakeTail = new Point(15, 15, 's');
             Snake snake = new Snake(snakeTail, 5, Direction.RIGHT);
             snake.Draw();
@@ -20,6 +23,11 @@ namespace SnakeOOP
             FoodGenerator foodGenerator = new FoodGenerator(80, 25, '$');
             Point food = foodGenerator.GenerateFood();
             food.Draw();
+
+            FoodGenerator foodGenerator2 = new FoodGenerator(80, 25, '*');
+            Point food2 = foodGenerator2.GenerateFood();
+            Console.ForegroundColor = ConsoleColor.DarkRed;
+            food2.Draw();
 
             while (true)
             {
@@ -53,6 +61,7 @@ namespace SnakeOOP
         }
         public static void WriteGameOver(string score)
         {
+            Console.Beep();
             int xOffset = 25;
             int yOffset = 8;
             Console.ForegroundColor = ConsoleColor.Red;

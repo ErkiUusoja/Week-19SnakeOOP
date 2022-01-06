@@ -4,9 +4,9 @@ using System.Text;
 
 namespace SnakeOOP
 {
-    class HorizontalLine
-    {
-        class HorizontalLine : Figure
+    
+    
+         class HorizontalLine : Figure
         {
             public HorizontalLine(int xLeft, int xRight, int y, char symb)
             {
@@ -20,4 +20,4 @@ namespace SnakeOOP
 
             }
         }
-}   }
+}   
